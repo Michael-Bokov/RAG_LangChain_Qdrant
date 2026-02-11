@@ -1,0 +1,14 @@
+# Dockerfile.ollama
+FROM ollama/ollama:latest
+
+# Устанавливаем curl для проверок (python3 не нужен Ollama)
+RUN apt-get update && apt-get install -y curl
+
+# Создаем entrypoint скрипт
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+EXPOSE 11434
+
+# Заменяем точку входа
+ENTRYPOINT ["/entrypoint.sh"]

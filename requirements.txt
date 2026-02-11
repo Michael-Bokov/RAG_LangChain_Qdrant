@@ -1,0 +1,17 @@
+ollama
+langchain-qdrant
+numpy<2
+langchain
+torch>=2.4
+langchain-core
+
+langchain-ollama
+langchain-community
+langchain_huggingface
+unstructured
+"unstructured[md]"
+sentence-transformers
+rich
+rank_bm25
+
+

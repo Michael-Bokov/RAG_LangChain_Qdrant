@@ -1,0 +1,12 @@
+#dockerfile.qdrant
+FROM qdrant/qdrant:latest
+
+# Если у вас есть свой файл конфигурации (например, для настройки памяти)
+# COPY config.yaml /qdrant/config/production.yaml
+
+# Открываем порты: 6333 (HTTP), 6334 (gRPC)
+EXPOSE 6333 6334
+
+# Указываем переменную для хранения данных (внутри контейнера)
+ENV QDRANT__STORAGE__PATH=/qdrant/storage
+ENV QDRANT__SERVICE__GRPC_PORT=6334
