@@ -60,7 +60,7 @@ vectorstore = QdrantVectorStore.from_existing_collection(
 # --- ГИБРИД ---
 console.print("[yellow]Подготовка гибридного поиска (BM25 + Vector)...[/yellow]")
 # 1. Получаем документы для текстового индекса (BM25)
-# Мы берем первые 10000 (у тебя всего 82, так что подтянет всё)
+# Мы берем первые 10000 (всего 82, так что подтянет всё)
 all_docs = vectorstore.similarity_search("", k=10000) 
 
 # 2. Создаем текстовый ретривер
